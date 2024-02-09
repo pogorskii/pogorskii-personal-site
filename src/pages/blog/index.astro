@@ -1,0 +1,14 @@
+---
+import PostLink from '../../components/PostLink.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import '../../styles/global.css';
+
+const allPosts = await Astro.glob('../blog/posts/*.md');
+---
+<BlogLayout title="Blog">
+  <h1>Welcome to my personal blog</h1>
+
+  <ul>
+    {allPosts.map((post) => <PostLink title={post.frontmatter.title} url={post.url} />)}
+  </ul>
+</BlogLayout>
