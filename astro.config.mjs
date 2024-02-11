@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import vue from "@astrojs/vue";
 
 import vercel from "@astrojs/vercel/serverless";
@@ -7,5 +7,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   integrations: [vue()],
   output: "server",
-  adapter: vercel()
+  adapter: vercel(),
+  site: "https://pogorskii.vercel.app",
 });
