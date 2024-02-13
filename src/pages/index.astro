@@ -3,101 +3,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Frontend Developer — React, NextJS, Vue">
-	<div class="introduction">Hello, I&apos;m Stanislav Pogorskii</div>
-	<h1 class="text-gradient">Frontend Developer</h1>
-	<div>building modern, clean and accessible projects</div>
-	<!-- <p class="instructions">
-		To get started, open the directory <code>src/pages</code> in your project.<br />
-		<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-	</p> -->
-	<!-- <ul role="list" class="link-card-grid">
-		<Card
-			href="https://docs.astro.build/"
-			title="Documentation"
-			body="Learn how Astro works and explore the official API docs."
-		/>
-		<Card
-			href="https://astro.build/integrations/"
-			title="Integrations"
-			body="Supercharge your project with new frameworks and libraries."
-		/>
-		<Card
-			href="https://astro.build/themes/"
-			title="Themes"
-			body="Explore a galaxy of community-built starter themes."
-		/>
-		<Card
-			href="https://astro.build/chat/"
-			title="Community"
-			body="Come say hi to our amazing Discord community. ❤️"
-		/>
-	</ul> -->
+	<section class="hero-section">
+		<div class="introduction-box">
+			<div class="sub-heading">Hello, I&apos;m Stanislav Pogorskii</div>
+			<h1><span>Frontend</span><span>Developer</span></h1>
+		</div>
+	</section>
+	<section class="stack-section">
+		<h2>I know many tools</h2>
+		<p>And I love learning new tech</p>
+	</section>
+	<section>
+		<h2>Here&apos;s my favorite project</h2>
+	</section>
 </BaseLayout>
 
 <style>
 	h1 {
+		margin-bottom: 3.2rem;
+		display: flex;
+		flex-direction: column;
 		font-size: 10rem;
 		font-weight: 700;
 		line-height: 1;
-		text-align: center;
+		letter-spacing: -0.1ch;
 	}
 
-	.introduction {
-		margin-bottom: 3.2rem;
+	h1 span:nth-child(2) {
+		margin-left: 1.5ch;
+	}
+
+	.introduction-box {
+		width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.sub-heading {
+		margin-bottom: 1.6rem;
 		font-size: 2.2rem;
 		font-weight: 500;
 		text-transform: uppercase;
 		letter-spacing: .2em;
 		line-height: 1;
-	}
-
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
 	}
 </style>

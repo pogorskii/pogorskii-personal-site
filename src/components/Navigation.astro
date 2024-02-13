@@ -7,18 +7,16 @@
 
 <style>
   nav {
-    margin-right: 50px;
+    height: fit-content;
     overflow: hidden;
     border-radius: 500px;
+    background-color: #ff9776;
   }
 
   .nav-links {
     width: 100%;
-    top: 5rem;
-    left: 48px;
     background-color: #ff9776;
     display: none;
-    margin: 0;
   }
 
   .nav-links a {
@@ -36,22 +34,22 @@
     background-color: #ff9776;
   }
 
+  .nav-links a:link,
   .nav-links a:visited {
-    color: white;
+    color: var(--color);
   }
 
   @media screen and (min-width: 636px) {
     .nav-links {
-      margin-left: 5em;
       display: block;
       position: static;
       width: auto;
-      background: none;
+      /* background: none; */
     }
 
     .nav-links a {
       display: inline-block;
-      padding: 15px 20px;
+      padding: 10px 20px;
     }
   }
 

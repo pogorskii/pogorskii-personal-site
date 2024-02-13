@@ -4,6 +4,7 @@ import Hamburger from "../components/Hamburger.astro";
 import Navigation from "../components/Navigation.astro";
 import ThemeSwitcher from "../components/ThemeSwitcher.astro";
 import SocialLink from "../components/SocialLink.astro";
+import Logo from "../components/Logo.astro";
 import '../styles/global.css';
 
 interface Props {
@@ -20,20 +21,24 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Stanislav Pogorskii</title>
 		<ViewTransitions />
 	</head>
 	<body>
-		<header>
+		<header class="container">
+			<Logo />
 			<Navigation />
 			<ThemeSwitcher />
 			<Hamburger />
 		</header>
-		<main>
+		<main class="container">
 			<slot />
 		</main>
-		<footer>
+		<footer class="container">
 			<SocialLink platform="twitter" username="astrodotbuild" />
 			<SocialLink platform="github" username="withastro" />
 			<SocialLink platform="youtube" username="astrodotbuild" />
@@ -48,3 +53,19 @@ const { title } = Astro.props;
 		});
 	});
 </script>
+
+<style>
+	header {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		position: sticky;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	main {
+		padding-top: 4rem;
+		padding-bottom: 8rem;
+	}
+</style>
