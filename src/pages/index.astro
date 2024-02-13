@@ -1,17 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout title="Frontend Developer — React, NextJS, Vue">
-	<div>Hello, I&apos;m Stanislav Pogorskii</div>
-	<h1>
-		<span class="text-gradient">Frontend Developer</span> building modern, clean and accessible projects</h1>
-	<p class="instructions">
+<BaseLayout title="Frontend Developer — React, NextJS, Vue">
+	<div class="introduction">Hello, I&apos;m Stanislav Pogorskii</div>
+	<h1 class="text-gradient">Frontend Developer</h1>
+	<div>building modern, clean and accessible projects</div>
+	<!-- <p class="instructions">
 		To get started, open the directory <code>src/pages</code> in your project.<br />
 		<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-	</p>
-	<ul role="list" class="link-card-grid">
+	</p> -->
+	<!-- <ul role="list" class="link-card-grid">
 		<Card
 			href="https://docs.astro.build/"
 			title="Documentation"
@@ -32,10 +31,26 @@ import Card from '../components/Card.astro';
 			title="Community"
 			body="Come say hi to our amazing Discord community. ❤️"
 		/>
-	</ul>
-</Layout>
+	</ul> -->
+</BaseLayout>
 
 <style>
+	h1 {
+		font-size: 10rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+	}
+
+	.introduction {
+		margin-bottom: 3.2rem;
+		font-size: 2.2rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: .2em;
+		line-height: 1;
+	}
+
 	main {
 		margin: auto;
 		padding: 1rem;
@@ -53,13 +68,6 @@ import Card from '../components/Card.astro';
 		width: 220px;
 		height: auto;
 		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);

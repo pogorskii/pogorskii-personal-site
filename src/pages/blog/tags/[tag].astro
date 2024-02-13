@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import BlogLayout from '../../../layouts/BlogLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostLink from "../../../components/PostLink.astro"
 import type { GetStaticPaths } from 'astro';
 export const prerender = true;
@@ -21,7 +21,7 @@ export const getStaticPaths = (async () => {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
-<BlogLayout title={tag}>
+<BaseLayout title={tag}>
   <p>Posts tagged with {tag}</p>
   {posts ?
     <ul>
@@ -29,4 +29,4 @@ const { posts } = Astro.props;
     </ul> :
     "There are no posts with this tag."
   }
-</BlogLayout>
+</BaseLayout>

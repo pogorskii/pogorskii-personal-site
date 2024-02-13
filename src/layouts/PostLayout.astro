@@ -1,5 +1,5 @@
 ---
-import BlogLayout from './BlogLayout.astro';
+import BaseLayout from './BaseLayout.astro';
 
 interface Props {
   frontmatter: {
@@ -17,7 +17,7 @@ interface Props {
 
 const { frontmatter } = Astro.props;
 ---
-<BlogLayout title={frontmatter.title}>
+<BaseLayout title={frontmatter.title}>
   <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
   <p>Written by {frontmatter.author}</p>
   <p><em>{frontmatter.description}</em></p>
@@ -26,7 +26,7 @@ const { frontmatter } = Astro.props;
   <div class="tags">
     {frontmatter.tags.map((tag) => <div class="tag"><a href={`/blog/tags/${tag}`}>{tag}</a></div>)}
   </div>
-</BlogLayout>
+</BaseLayout>
 <style>
   a {
     color: #00539F;

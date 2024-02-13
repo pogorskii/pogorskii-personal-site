@@ -1,9 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import Hamburger from '../components/Hamburger.astro';
-import Navigation from '../components/Navigation.astro';
-import ThemeSwitcher from '../components/ThemeSwitcher.astro';
-import SocialLink from '../components/SocialLink.astro';
+import Hamburger from "../components/Hamburger.astro";
+import Navigation from "../components/Navigation.astro";
+import ThemeSwitcher from "../components/ThemeSwitcher.astro";
+import SocialLink from "../components/SocialLink.astro";
 import '../styles/global.css';
 
 interface Props {
@@ -21,17 +21,16 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Pogorskii</title>
+		<title>{title} | Stanislav Pogorskii</title>
 		<ViewTransitions />
 	</head>
 	<body>
 		<header>
-			<Hamburger />
-			<ThemeSwitcher />
 			<Navigation />
+			<ThemeSwitcher />
+			<Hamburger />
 		</header>
 		<main>
-			<h1 transition:animate="slide">{title}</h1>
 			<slot />
 		</main>
 		<footer>
@@ -39,19 +38,13 @@ const { title } = Astro.props;
 			<SocialLink platform="github" username="withastro" />
 			<SocialLink platform="youtube" username="astrodotbuild" />
 		</footer>
-		<script>
-			document.addEventListener('astro:page-load', () => {
-				document.querySelector('.hamburger')?.addEventListener('click', () => {
-					document.querySelector('.nav-links')?.classList.toggle('expanded');
-				});
-			});
-		</script>
 	</body>
 </html>
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		document.querySelector('.hamburger')?.addEventListener('click', () => {
+			document.querySelector('.nav-links')?.classList.toggle('expanded');
+		});
+	});
+</script>
