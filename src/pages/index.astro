@@ -1,20 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutSection from '../components/AboutSection.astro'
+import PortfolioSection from '../components/PortfolioSection.astro'
 ---
 
 <BaseLayout title="Frontend Developer — React, NextJS, Vue">
 	<section class="hero-section">
 		<div class="introduction-box">
-			<div class="sub-heading">Hello, I&apos;m Stanislav Pogorskii</div>
+			<div class="sub-heading">Stanislav Pogorskii</div>
 			<h1><span>Frontend</span><span>Developer</span></h1>
+			<div class="core-skills">React | Next.js | JavaScript | TypeScript</div>
 		</div>
 	</section>
+	<AboutSection />
+	<PortfolioSection />
 	<section class="stack-section">
-		<h2>I know many tools</h2>
+		<h2>My stack</h2>
+		<div class="skills-box">
+			<h3>Frontend</h3>
+		</div>
 		<p>And I love learning new tech</p>
-	</section>
-	<section>
-		<h2>Here&apos;s my favorite project</h2>
 	</section>
 </BaseLayout>
 
@@ -24,7 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		display: flex;
 		flex-direction: column;
 		font-size: 10rem;
-		font-weight: 700;
+		font-weight: 600;
 		line-height: 1;
 		letter-spacing: -0.1ch;
 	}
@@ -46,5 +51,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		text-transform: uppercase;
 		letter-spacing: .2em;
 		line-height: 1;
+		text-align: center;
+	}
+
+	.core-skills {
+		font-size: 1.8rem;
+		text-align: center;
+		font-weight: 500;
+		letter-spacing: .1em;
+	}
+
+	.skills-box {
+		height: 400px;
+		padding: 2rem;
+		border-radius: 3rem;
+		background-color: chartreuse;
 	}
 </style>

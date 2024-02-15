@@ -85,12 +85,37 @@ code {
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
+h2 {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  border-bottom: 1px solid black;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+section {
+  padding-bottom: 4rem;
+}
+
 .container {
   max-width: 110rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 3.2rem;
   padding-right: 3.2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
 }
 
 /* nav styles */
@@ -109,6 +134,11 @@ code {
 
 .expanded {
   display: unset;
+}
+
+.content-box {
+  padding: 3rem;
+  border-radius: 3rem;
 }
 
 @media screen and (min-width: 636px) {
