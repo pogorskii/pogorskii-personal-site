@@ -11,12 +11,17 @@
   #themeToggle {
     border: 0;
     background: none;
+    cursor: pointer;
   }
-  .sun { fill: black; }
+  .sun { fill: var(--color); }
   .moon { fill: transparent; }
 
   :global(.dark) .sun { fill: transparent; }
-  :global(.dark) .moon { fill: white; }
+  :global(.dark) .moon { fill: var(--color--dark); }
+
+  :global(.expanded) button {
+    display: none;
+  }
 </style>
 
 <script>
