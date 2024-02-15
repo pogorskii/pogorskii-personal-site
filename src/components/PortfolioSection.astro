@@ -1,7 +1,69 @@
-<section>
-  <h2>Favorite projects (so far)</h2>
-  <div>
-    <h3>WIITCO (When Is It Coming Out)</h3>
-    
+<section id="portfolio">
+  <h2>Favorite project ❤️</h2>
+  <div class="project-card">
+    <div class="project-card--description">
+      <h3>WIITCO (When Is It Coming Out)</h3>
+      <p class="mb-1">An all-in-one platform to track release dates of movies, TV shows, and games.</p>
+      <p class="mb-1">It pulls data from its own DB, which caches 3+ millions of records from various APIs.</p>
+      <div class="stack">Next.js, TypeScript, Tailwind, Shadcn, Zod, Auth0, PostgreSQL, Prisma, Framer Motion</div>
+      <div class="links">
+        <a class="live-link" href="https://wiitco.vercel.app/">Live</a>
+        <a class="github-link" href="https://github.com/pogorskii/wiitco-app">GitHub</a>
+      </div>
+    </div>
+    <div><img src="/wiitco-screen.webp" width="100%" height="auto" /></div>
   </div>
 </section>
+
+<style>
+  .project-card {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 4rem;
+  }
+
+  .stack {
+    font-weight: 500;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    letter-spacing: .05em;
+  }
+
+  .links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  a {
+    display: block;
+  }
+
+  a:link,
+  a:visited {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--color);
+    border-radius: .5rem;
+    font-weight: 600;
+  }
+
+  a:hover,
+  a:active {
+    
+  }
+
+  .live-link:link,
+  .live-link:visited {
+    background-color: chartreuse;
+  }
+
+  .github-link:link,
+  .github-link:visited {
+    background-color: var(--color);
+    color: var(--color--dark);
+  }
+</style>
