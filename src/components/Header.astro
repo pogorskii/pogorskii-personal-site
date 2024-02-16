@@ -1,0 +1,23 @@
+---
+import Hamburger from "../components/Hamburger.astro";
+import Navigation from "../components/Navigation.astro";
+import ThemeSwitcher from "../components/ThemeSwitcher.astro";
+import Logo from "../components/Logo.astro";
+---
+
+<header class="container header">
+  <Logo />
+  <Navigation />
+  <ThemeSwitcher />
+  <Hamburger />
+</header>
+
+<style>
+  .header {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+</style>
