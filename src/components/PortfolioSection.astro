@@ -1,43 +1,75 @@
+---
+const wiitcoStack = ["Next.js", "TypeScript", "Tailwind",  "Zod", "Auth0", "PostgreSQL", "Prisma", "Framer Motion", "Go"];
+---
+
 <section id="portfolio">
   <h2>Favorite project ❤️</h2>
   <div class="project-card">
-    <div class="project-card--description">
-      <h3>WIITCO (When Is It Coming Out)</h3>
-      <p class="mb-1">An all-in-one platform to track release dates of movies, TV shows, and games.</p>
-      <p class="mb-1">It pulls data from its own DB, which caches 3+ millions of records from various APIs.</p>
-      <div class="stack">Next.js, TypeScript, Tailwind, Shadcn, Zod, Auth0, PostgreSQL, Prisma, Framer Motion</div>
-      <div class="links">
-        <a class="live-link" href="https://wiitco.vercel.app/">Live</a>
-        <a class="github-link" href="https://github.com/pogorskii/wiitco-app">GitHub</a>
+    <div class="project-card--info">
+      <div class="project-card--description">
+        <h3>WIITCO (When Is It Coming Out)</h3>
+        <p class="mb-1">An all-in-one platform to track release dates of movies, TV shows, and games.</p>
+        <p class="mb-1">It pulls data from its own DB, which dynamically caches 3+ millions of records from various APIs.</p>
+        <div class="links">
+          <a class="live-link" href="https://wiitco.vercel.app/">Live</a>
+          <a class="github-link" href="https://github.com/pogorskii/wiitco-app">GitHub</a>
+        </div>
+      </div>
+      <div class="project-card--screenshot">
+        <a href="https://wiitco.vercel.app/">
+          <img src="/wiitco-screen.webp" width="100%" height="auto" alt="wiitco app screenshot"/>
+        </a>
       </div>
     </div>
-    <div><img src="/wiitco-screen.webp" width="100%" height="auto" /></div>
+    <div class="project-card--stack">
+      {wiitcoStack.map(tech => <span class="stack--tag">{tech}</span>)}
+    </div>
   </div>
 </section>
 
 <style>
   .project-card {
-    padding: 2rem;
+    padding: 4rem;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 3rem;
+  }
+
+  .project-card--info {
+    margin-bottom: 2rem;
     display: grid;
-    grid-template-columns: 1fr 400px;
     gap: 4rem;
   }
 
-  .stack {
-    font-weight: 500;
-    margin-bottom: 2rem;
+  .project-card--description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card--screenshot {
+    order: -1;
+  }
+
+  .project-card--stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    font-weight: 600;
     font-size: 1.8rem;
     line-height: 1.5;
     letter-spacing: .05em;
   }
 
-  .links {
-    display: flex;
-    gap: 1rem;
+  .stack--tag {
+    padding: 0.2rem 1rem;
+    border-radius: 500px;
+    color: var(--color);
+    background-color: var(--color--dark);
   }
 
-  a {
-    display: block;
+  .links {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
   }
 
   a:link,
@@ -49,6 +81,7 @@
     color: var(--color);
     border-radius: .5rem;
     font-weight: 600;
+    transition: background-color .2s ease-out;
   }
 
   a:hover,
@@ -58,12 +91,32 @@
 
   .live-link:link,
   .live-link:visited {
-    background-color: chartreuse;
+    background-color: #7FFF00;
+  }
+
+  .live-link:hover,
+  .live-link:active {
+    background-color: #9fff3f;
   }
 
   .github-link:link,
   .github-link:visited {
     background-color: var(--color);
     color: var(--color--dark);
+  }
+
+  .github-link:hover,
+  .github-link:active {
+    background-color: #3f3f3f;
+  }
+
+  @media screen and (min-width: 768px) {
+    .project-card--info {
+      grid-template-columns: 1fr 400px;
+    }
+
+    .project-card--screenshot {
+      order: unset;
+    }
   }
 </style>
