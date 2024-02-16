@@ -25,7 +25,7 @@ const { title } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body>
-		<header class="container">
+		<header class="container header">
 			<Logo />
 			<Navigation />
 			<ThemeSwitcher />
@@ -41,10 +41,9 @@ const { title } = Astro.props;
 </html>
 
 <style>
-	header {
+	.header {
 		padding-top: 1rem;
 		padding-bottom: 1rem;
-		position: sticky;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
