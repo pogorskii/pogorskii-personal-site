@@ -1,0 +1,33 @@
+---
+import StackCategory from '../components/StackCategory.astro'
+
+const frontendTech = ["HTML5", "CSS3", "SASS", "React", "Redux", "Next.js", "Astro", "Tailwind", "JavaScript", "TypeScript", "D3.js"];
+const backendTech = ["TypeScript", "Node.js", "Express.js", "Go", "Auth0", "MongoDB", "PostgreSQL", "Prisma", "Gorm", "Zod"];
+const misc = ["Git", "GitHub", "Figma", "a11y", "DRY", "BEM", "Clean Code", "SEO", "Mobile-first", "UI/UX Assessment"];
+const softskills = ["Problem Solving", "Teamwork", "Adaptability", "Communication", "Stress Resilience", "Accountability", "Time Management"];
+---
+
+<section id="stack">
+  <h2>My stack 🛠️</h2>
+  <div class="section-content">
+    <StackCategory title="Frontend" tags={frontendTech} backgroundColor="#76BED0"/>
+    <StackCategory title="Backend" tags={backendTech} backgroundColor="#F55D3E"/>
+    <StackCategory title="Tools & Best Practices" tags={misc} backgroundColor="#F7CB15"/>
+    <StackCategory title="Softskills" tags={softskills} backgroundColor="#878E88"/>
+  </div>
+  <p style="text-align: center;">And a <strong>love</strong> of learning new things!</p>
+</section>
+
+<style>
+  .section-content {
+    margin-bottom: 2rem;
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

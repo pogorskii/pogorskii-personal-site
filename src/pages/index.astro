@@ -3,27 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro'
 import AboutSection from '../components/AboutSection.astro'
 import PortfolioSection from '../components/PortfolioSection.astro'
+import StackSection from '../components/StackSection.astro'
 ---
 
 <BaseLayout title="Frontend Developer — React, NextJS, Vue">
 	<HeroSection />
 	<AboutSection />
 	<PortfolioSection />
-	<section class="stack-section">
-		<h2>My stack</h2>
-		<div class="skills-box">
-			<h3>Frontend</h3>
-		</div>
-		<p>And I love learning new tech</p>
-	</section>
+	<StackSection />
 </BaseLayout>
-
-<style>
-
-	.skills-box {
-		height: 400px;
-		padding: 2rem;
-		border-radius: 3rem;
-		background-color: chartreuse;
-	}
-</style>

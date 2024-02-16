@@ -1,0 +1,32 @@
+---
+const {title, tags, backgroundColor} = Astro.props;
+---
+
+<div class="content-box">
+  <h3>{title}</h3>
+  <div class="tags-box">
+    {tags.map(tech => <span class="tag">{tech}</span>)}
+  </div>
+</div>
+
+<style define:vars={{ backgroundColor }}>
+  .content-box {
+    background-color: var(--backgroundColor);
+  }
+
+  .tags-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.2rem 1rem;
+    border-radius: 500px;
+    color: var(--color);
+    background-color: var(--color--dark);
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: .05em;
+  }
+</style>
